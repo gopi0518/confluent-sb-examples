@@ -1,0 +1,23 @@
+server:
+  port: 8081
+  servlet:
+    contextPath: /kafka
+spring:
+  profiles:
+    active:
+    - primary
+  application:
+    name: service2
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+management:
+  endpoint:
+    restart:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: restart,health
